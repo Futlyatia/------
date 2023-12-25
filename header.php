@@ -2,10 +2,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
   <link rel="stylesheet" href="styles/header_style.css">
 </head>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <header class = "container-sm">
+      <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #000000">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.php">NeonMusic</a>
+          <a class="navbar-brand " href="index.php">
+            <h3 class = "neon-text">NeonMusic</h3>
+          </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,23 +48,38 @@
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                          <a class="dropdown-item" href="#">
+                          <a class="dropdown-item" href="php/logout.php">
+                          <i class="fas fa-record-vinyl"></i>
+                            Добавить альбом
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="php/logout.php">
                             <i class="fas fa-sign-out-alt"></i>
                             Выход
                           </a>
                         </li>
-                        <li><a class="dropdown-item" href="#"></a></li>
                       </ul>
                     </li>
                   </ul>
-                <?php } } else{
+                <?php } else{
               ?>
-              <ul class="navbar-nav ml-auto">
+              <ul class="navbar-nav ml-auto menu">
                 <li class="nav-item">
                   <a class="nav-link" href="registration.php">Регистрация</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="authorization.php">Войти</a>
+                  <a class="nav-link" href="authorization.php">Вход</a>
+                </li>
+              </ul>
+              <?php } } else{
+                ?>
+                <ul class="navbar-nav ml-auto menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="registration.php">Регистрация</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="authorization.php">Вход</a>
                 </li>
               </ul>
               <?php } ?>

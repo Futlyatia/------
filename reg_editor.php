@@ -35,16 +35,23 @@
                 <label for="password_submit" class="form-label">Повторите пароль</label>
                 <input type = "password" class="form-control" id="password_submit" name="password_submit" oninput="checkSubmitPassword(this)" required>
             </div>
+            <div class="mb-3">
+                <label for="nickname" class="form-label">Никнейм</label>
+                <input type = "text" class="form-control" id="nickname" name="nickname" required>
+            </div>
+            <div class="input-group">
+                <label for="biography" class="form-label">О себе</label>
+                <textarea class="form-control" aria-label="С текстовым полем" id="about" name="about"></textarea>
+            </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="agreement" required>
                 <label class="form-check-label" for="agreement">Я согласен на обработку персональных данных</label>
             </div>
             <button type="submit" class="btn btn-primary" id = "register" name = "register">Зарегистрироваться</button>
-            <a  href="reg_editor.php">Я исполнитель</a>
         </form>
         
     </div>
     <div class = "neon-border"></div>
-    <script type="text/javascript" src="scripts/registration_script.js"></script>
+    <script type="text/javascript" src="scripts/reg_editor_script.js"></script>
 </body>
 </html>

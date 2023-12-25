@@ -47,7 +47,7 @@ function checkSubmitPassword(input) {
 }
 //12Qw!+
 async function reg(data) {
-    let response = await fetch("php/reg_script.php", {
+    let response = await fetch("php/reg_editor_script.php", {
         method: "POST",
         body: data,
     });
@@ -73,7 +73,8 @@ formRegistration.addEventListener("submit", (e) => {
     const formData = JSON.stringify({
         login: formRegistration.login.value,
         password: formRegistration.password.value,
-        
+        nickname: formRegistration.nickname.value,
+        about: formRegistration.about.value
     });
     reg(formData);
 });
