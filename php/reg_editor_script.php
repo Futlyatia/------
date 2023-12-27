@@ -15,19 +15,34 @@ $data = json_decode($jsonData, true);
             include("connect.php");
             $result = mysqli_query($mysqli,"SELECT `id` FROM `users` WHERE `login`='$login'");
             $myrow = mysqli_fetch_array($result);
-            if(!empty($myrow)){
+            $result1 = mysqli_query($mysqli,"SELECT `id` FROM `editors` WHERE `nickname`='$nickname'");
+            $myrow1 = mysqli_fetch_array($result);
+            if(!empty($myrow) && !empty($myrow1)){
                 if(!empty($myrow)){
                     $response["busyLogin"] = true;
                 }
-            } 
-            else {
+                else{
+                    $response["busyLogin"] = false;
+                }
+                if(!empty($myrow1)){
+                    $response["busyNickname"] = true;
+                }
+                else{
+                    $response["busyNickname"] = false; 
+                }
+                
+            }
+            else{
+                $response["busyLogin"] = false;
+                $response["busyNickname"] = false; 
+                $role_id = 3;
                 $hashPassword = password_hash($password, PASSWORD_DEFAULT);
                 $token = bin2hex(random_bytes(15));
                 $reg_prepare = $mysqli->prepare(
                     "INSERT INTO `users`(`login`, `password`, `token`,`role_id`) 
                     VALUES (?,?,?,?)"
                 );
-                $reg_prepare->bind_param("sssd", $login, $hashPassword, $token, 3);
+                $reg_prepare->bind_param("sssd", $login, $hashPassword, $token, $role_id);
                 $reg_prepare->execute();
                 $result = mysqli_fetch_assoc(mysqli_query($mysqli,"SELECT id FROM users WHERE `login` ='$login'"));
                 $id = $result['id'];

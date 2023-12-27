@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles/reg_style.css">
-    <link rel="stylesheet" href="styles/borders.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js"></script>
 </head>
@@ -44,7 +43,6 @@
         </form>
         
     </div>
-    <div class = "neon-border"></div>
     <script type="text/javascript" src="scripts/registration_script.js"></script>
 </body>
 </html>

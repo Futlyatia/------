@@ -73,9 +73,9 @@ formRegistration.addEventListener("submit", (e) => {
     const formData = JSON.stringify({
         login: formRegistration.login.value,
         password: formRegistration.password.value,
-        
+
     });
-    reg(formData);
+    reg(formData);v
 });
 
 
